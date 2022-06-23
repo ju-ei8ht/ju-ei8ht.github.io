@@ -1,15 +1,16 @@
 # Dependencies
+gems:             [jekyll-paginate]
 markdown:         kramdown
 highlighter:      pygments
 
 # Permalinks
 permalink:        pretty
-relative_permalinks: true
+# relative_permalinks: true
 
 # Setup
-title:            code 저장소
+title:            code
 tagline:          'A Jekyll theme'
-description:      'TIL · WIL · 해결한 코드 저장소'
+description:      '해결한 코드 저장소'
 url:              https://ju-ei8ht.github.io/
 baseurl:          /
 
