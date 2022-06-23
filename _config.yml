@@ -4,7 +4,8 @@ markdown:         kramdown
 highlighter:      pygments
 
 # Permalinks
-permalink:        pretty
+# permalink:        pretty
+permalink: '/page/:num/'
 # relative_permalinks: true
 
 # Setup

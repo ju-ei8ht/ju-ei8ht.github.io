@@ -1,124 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
- <title>Hyde</title>
+ <title>code</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2022-06-23T23:39:25+09:00</updated>
+ <updated>2022-06-24T07:13:15+09:00</updated>
  <id>http://localhost:4000</id>
  <author>
-   <name>Mark Otto</name>
+   <name>주8</name>
    <email></email>
  </author>
 
- 
- <entry>
-   <title>Welcome to Jekyll!</title>
-   <link href="http://localhost:4000/jekyll/update/2022/06/23/welcome-to-jekyll/"/>
-   <updated>2022-06-23T22:43:43+09:00</updated>
-   <id>http://localhost:4000/jekyll/update/2022/06/23/welcome-to-jekyll</id>
-   <content type="html">&lt;p&gt;You’ll find this post in your &lt;code&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
-
-&lt;p&gt;Jekyll requires blog post files to be named according to the following format:&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;YEAR-MONTH-DAY-title.MARKUP&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Where &lt;code&gt;YEAR&lt;/code&gt; is a four-digit number, &lt;code&gt;MONTH&lt;/code&gt; and &lt;code&gt;DAY&lt;/code&gt; are both two-digit numbers, and &lt;code&gt;MARKUP&lt;/code&gt; is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
-
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;Tom&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &apos;Hi, Tom&apos; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;
-
-</content>
- </entry>
- 
- <entry>
-   <title>(항해99) 1주차 웹개발 미니 프로젝트 - 기획</title>
-   <link href="http://localhost:4000/2022/06/20/project01-1/"/>
-   <updated>2022-06-20T00:00:00+09:00</updated>
-   <id>http://localhost:4000/2022/06/20/project01-1</id>
-   <content type="html">&lt;p&gt;동북권 이노베이션캠프에 합격하고 시작된 1주차. &lt;br /&gt;
-배정받은 팀원들과 4일동안(엄밀히 말하면 3.5일) 미니 웹 프로젝트를 시작하게 되었다.&lt;/p&gt;
-
-&lt;p&gt;주특기를 선택하고 첫 프로젝트라 바로 선택한 주특기를 활용해야 하나 긴장했는데, 아직 배운 게 없으므로 &lt;strong&gt;선택한 주특기에 상관 없이&lt;/strong&gt; &lt;em&gt;Python으로 html을 코딩하는 프로젝트!&lt;/em&gt; &lt;br /&gt;
-각자 선택한 프론트엔드/백엔드 상관 없이 기획한 미니 프로젝트를 협업해서 완성하는 것이 목표다.   &lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h3 id=&quot;기획&quot;&gt;&lt;strong&gt;기획&lt;/strong&gt;&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;p&gt;욕심은 첫 프로젝트인 만큼 &lt;em&gt;나 이렇게 코딩 잘 한다&lt;/em&gt;는 걸 보여주고픈 마음이 없진 않았지만ㅋㅋ &lt;br /&gt;
-3일동안 만들고 하루동안 테스트해서 제출하는 프로젝트라서 아주 간단한 사이트를 만들어야 했다. &lt;br /&gt;
-&lt;br /&gt;
-***&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;기획단계에서 염두해둔 것들&lt;/strong&gt;&lt;/p&gt;
-  &lt;ul&gt;
-    &lt;li&gt;간단한 사이트일 것&lt;/li&gt;
-    &lt;li&gt;0주차에 받은 강의를 통해 얻은 지식 활용&lt;/li&gt;
-    &lt;li&gt;구현할 수 있는 기능범위를 오버하지 않기&lt;/li&gt;
-    &lt;li&gt;공지받은 필수 포함 사항 활용하기 &lt;br /&gt;
- *** &lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/blockquote&gt;
-
-&lt;h4 id=&quot;1-주제-정하기&quot;&gt;1. &lt;strong&gt;주제 정하기&lt;/strong&gt;&lt;/h4&gt;
-&lt;p&gt;주제를 정하기 위한 브레인스토밍을 하면서 팀원들의 관심사에 대해 이야기를 나눴고 구체적인 모습이 나온 게 2가지&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;나만의 커스텀 레시피&lt;/strong&gt; &lt;br /&gt;
- 카페 커스텀메뉴나 서브웨이 꿀조합 같은 나만 알고 있는 레시피 조합을 공유하는 사이트&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;유튜브 쇼츠 공유&lt;/strong&gt; &lt;br /&gt;
- 관심있는 유튜브 쇼츠를 공유하는 사이트&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;이 중에서 유튜브 쇼츠로 의견이 좁혀졌고, 배운 걸 어떻게 활용해서 사이트를 구성하면 좋을지까지 그려지면서 비교적 빨리 기획이 정해졌다. &lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;2-와이어프레임&quot;&gt;2. &lt;strong&gt;와이어프레임&lt;/strong&gt;&lt;/h4&gt;
-&lt;p&gt;구체적으로 클라이언트단에서 화면이 어떻게 보여질 것인가를 기획하는 것으로, 대화만으론 정해지기 어렵겠다 싶어 각자 와이어프레임을 구성해서 발표하기로 했다.&lt;/p&gt;
-
-&lt;p&gt;킹갓 그림판으로ㅋㅋ 열심히 그려서 발표를 했다. 그릴 땐 힘들었으나, 도형으로 그려두니까 보기 깔끔해서 좋았다. &lt;br /&gt;
-&lt;em&gt;(물론 두번다시는 하고 싶지 않지만)&lt;/em&gt;&lt;br /&gt;
-그래도 결과적으로 보기에 깔끔해서 와이어프레임을 그리는 건 내가 하기로… 좋은 건진 모르겠지만ㅋㅋ &lt;br /&gt;
-&lt;em&gt;(다시 말하지만 두번다시는 하고 싶지 않다)&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;각자의 와이어프레임에서 비슷한 구성인 것은(예컨대 로그인/회원가입 폼같은) fix하고 메인이라든지 포스팅 페이지같은 건 발표된 시안에서 의견을 수렴하여 정했고 내가 다시 킹림판으로 그렸다…ㅋ &lt;br /&gt;
-&lt;em&gt;(다시 말하지만 두번다시는…이하생략)&lt;/em&gt; &lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;와이어프레임&lt;/strong&gt;&lt;/p&gt;
-  &lt;ol&gt;
-    &lt;li&gt;처음 냈던 와이어프레임 &lt;br /&gt;
-&lt;img src=&quot;/images/frame01.jpg&quot; alt=&quot;기획한 와이어프레임&quot; title=&quot;기획한 와이어프레임&quot; /&gt;&lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/blockquote&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;결정된 와이어프레임 &lt;br /&gt;
-&lt;img src=&quot;/images/frame_final.jpg&quot; alt=&quot;최종 와이어프레임&quot; title=&quot;최종 와이어프레임&quot; /&gt;
-***
-&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;마무리&quot;&gt;&lt;strong&gt;마무리&lt;/strong&gt;&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;p&gt;프로젝트 이름은 &lt;strong&gt;Too Shorts&lt;/strong&gt;로 정해졌다. &lt;br /&gt;
-프로젝트명에 대해 얘기하다가 유튜브 쇼츠들이니까 &lt;em&gt;many의 의미 + 강조의 의미&lt;/em&gt;해서 무지성으로 던졌는데 딱히 더 좋은 아이디어가 나오지 않아 그냥 정해졌다.
-쇼츠니까 예전 슉슈슈슉 밈을 활용한 아이디어도 제시되었고 참신했지만 너무 길다는 이유로(ㅋㅋ) 제외되었다…&lt;/p&gt;
-
-&lt;p&gt;점심 먹고 와이어프레임을 그려서 제출하고, 협업을 위한 Git설치 및 GitHub 가입(그렇다 이날 처음 깃헙 가입을 했다ㅋㅋ)을 하고 팀장님이 만든 리포에 초대받고, 제출 하라는 거 뚝딱뚝딱하고 강의영상 보다가 면담 호출받고 매니저님과 대화하다가 하루가 끝났다. &lt;br /&gt;
-내일 역할분담 및 코딩이 시작될텐데 기대 반 걱정 반이다. 다른 팀원들에 비해 내가 개발 지식이 많이 부족해서ㅠㅠ 빨리 따라잡도록 해야겠다. &lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/ferrariRoma/too_shorts&quot; title=&quot;Too Shorts GitHub&quot;&gt;Too Shorts GitHub&lt;/a&gt;&lt;/p&gt;
-</content>
- </entry>
  
  <entry>
    <title>Oh Yes</title>
