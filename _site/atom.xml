@@ -4,7 +4,7 @@
  <title>code</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2022-06-24T07:13:15+09:00</updated>
+ <updated>2022-06-25T08:13:39+09:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>주8</name>
@@ -13,51 +13,29 @@
 
  
  <entry>
-   <title>Oh Yes</title>
-   <link href="http://localhost:4000/spec/source/2014/05/25/oh-yes/"/>
-   <updated>2014-05-25T00:00:00+09:00</updated>
-   <id>http://localhost:4000/spec/source/2014/05/25/oh-yes</id>
-   <content type="html"></content>
- </entry>
- 
- <entry>
-   <title>Whateva</title>
-   <link href="http://localhost:4000/spec/source/2014/05/24/whateva/"/>
-   <updated>2014-05-24T00:00:00+09:00</updated>
-   <id>http://localhost:4000/spec/source/2014/05/24/whateva</id>
-   <content type="html"></content>
- </entry>
- 
- <entry>
-   <title>Hey There</title>
-   <link href="http://localhost:4000/spec/source/2014/05/23/hey-there/"/>
-   <updated>2014-05-23T00:00:00+09:00</updated>
-   <id>http://localhost:4000/spec/source/2014/05/23/hey-there</id>
-   <content type="html"></content>
- </entry>
- 
- <entry>
-   <title>Humor</title>
-   <link href="http://localhost:4000/spec/source/2014/05/22/humor/"/>
-   <updated>2014-05-22T00:00:00+09:00</updated>
-   <id>http://localhost:4000/spec/source/2014/05/22/humor</id>
-   <content type="html"></content>
- </entry>
- 
- <entry>
-   <title>Bleh</title>
-   <link href="http://localhost:4000/spec/source/2014/05/21/bleh/"/>
-   <updated>2014-05-21T00:00:00+09:00</updated>
-   <id>http://localhost:4000/spec/source/2014/05/21/bleh</id>
-   <content type="html"></content>
- </entry>
- 
- <entry>
-   <title>Blah</title>
-   <link href="http://localhost:4000/spec/source/2014/05/20/blah/"/>
-   <updated>2014-05-20T00:00:00+09:00</updated>
-   <id>http://localhost:4000/spec/source/2014/05/20/blah</id>
-   <content type="html"></content>
+   <title>Welcome to Jekyll!</title>
+   <link href="http://localhost:4000/2022/06/23/welcome-to-jekyll/"/>
+   <updated>2022-06-23T00:00:00+09:00</updated>
+   <id>http://localhost:4000/2022/06/23/welcome-to-jekyll</id>
+   <content type="html">&lt;p&gt;You’ll find this post in your &lt;code&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+
+&lt;p&gt;Jekyll requires blog post files to be named according to the following format:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;YEAR-MONTH-DAY-title.MARKUP&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Where &lt;code&gt;YEAR&lt;/code&gt; is a four-digit number, &lt;code&gt;MONTH&lt;/code&gt; and &lt;code&gt;DAY&lt;/code&gt; are both two-digit numbers, and &lt;code&gt;MARKUP&lt;/code&gt; is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+
+&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;Tom&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &apos;Hi, Tom&apos; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;
+
+</content>
  </entry>
  
  <entry>
