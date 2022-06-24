@@ -12,7 +12,7 @@ title:            code
 tagline:          'A Jekyll theme'
 description:      '해결한 코드 저장소'
 url:              https://ju-ei8ht.github.io/
-baseurl:          '/'
+baseurl:          ""
 
 author:
   name:           '주8'
