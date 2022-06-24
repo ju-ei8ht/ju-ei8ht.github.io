@@ -1,87 +1,4 @@
-<!DOCTYPE html>
-<html lang="en-us">
-
-  <head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-
-  <!-- Enable responsiveness on mobile devices-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
-  <title>
-    
-      (항해99) 1주차 웹개발 미니 프로젝트 - 기획 &middot; code
-    
-  </title>
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/poole.css">
-  <link rel="stylesheet" href="/public/css/syntax.css">
-  <link rel="stylesheet" href="/public/css/hyde.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
-
-  <!-- Icons -->
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="public/apple-touch-icon-144-precomposed.png">
-                                 <link rel="shortcut icon" href="public/favicon.ico">
-
-  <!-- RSS -->
-  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
-</head>
-
-
-  <body>
-
-    <div class="sidebar">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <h1>
-        <a href="">
-          code
-        </a>
-      </h1>
-      <p class="lead">해결한 코드 저장소</p>
-    </div>
-
-    <nav class="sidebar-nav">
-      <a class="sidebar-nav-item" href="">Home</a>
-
-      
-
-      
-      
-        
-          
-        
-      
-        
-          
-            <a class="sidebar-nav-item" href="/about/">About</a>
-          
-        
-      
-        
-      
-        
-          
-        
-      
-
-      <a class="sidebar-nav-item" href="https://github.com/ju-ei8ht/archive/v2.1.0.zip">Download</a>
-      <a class="sidebar-nav-item" href="https://github.com/ju-ei8ht">GitHub project</a>
-      <span class="sidebar-nav-item">Currently v2.1.0</span>
-    </nav>
-
-    <p>&copy; 2022. All rights reserved.</p>
-  </div>
-</div>
-
-
-    <div class="content container">
-      <div class="post">
-  <h1 class="post-title">(항해99) 1주차 웹개발 미니 프로젝트 - 기획</h1>
-  <span class="post-date">20 Jun 2022</span>
-  <p>동북권 이노베이션캠프에 합격하고 시작된 1주차. <br />
+I"�<p>동북권 이노베이션캠프에 합격하고 시작된 1주차. <br />
 배정받은 팀원들과 4일동안(엄밀히 말하면 3.5일) 미니 웹 프로젝트를 시작하게 되었다.</p>
 
 <p>주특기를 선택하고 첫 프로젝트라 바로 선택한 주특기를 활용해야 하나 긴장했는데, 아직 배운 게 없으므로 <strong>선택한 주특기에 상관 없이</strong> <em>Python으로 html을 코딩하는 프로젝트!</em> <br />
@@ -90,20 +7,17 @@
 <hr />
 <p>욕심은 첫 프로젝트인 만큼 <em>나 이렇게 코딩 잘 한다</em>는 걸 보여주고픈 마음이 없진 않았지만ㅋㅋ <br />
 3일동안 만들고 하루동안 테스트해서 제출하는 프로젝트라서 아주 간단한 사이트를 만들어야 했다. <br />
-<br /></p>
-
-<hr />
-<p><strong>기획단계에서 염두해둔 것들</strong></p>
+<br />
+—
+<strong>기획단계에서 염두해둔 것들</strong></p>
 <ul>
   <li>간단한 사이트일 것</li>
   <li>0주차에 받은 강의를 통해 얻은 지식 활용</li>
   <li>구현할 수 있는 기능범위를 오버하지 않기</li>
-  <li>공지받은 필수 포함 사항 활용하기</li>
+  <li>공지받은 필수 포함 사항 활용하기 <br />
+ —
+<br /></li>
 </ul>
-
-<hr />
-
-<p><br /></p>
 
 <h4 id="1-주제-정하기">1. 주제 정하기</h4>
 <p>주제를 정하기 위한 브레인스토밍을 하면서 팀원들의 관심사에 대해 이야기를 나눴고 구체적인 모습이 나온 게 2가지</p>
@@ -157,17 +71,4 @@
 <br /></p>
 
 <p><a href="https://github.com/ferrariRoma/too_shorts" title="Too Shorts GitHub">Too Shorts GitHub</a></p>
-
-</div>
-
-<div class="related">
-  <h2>Related Posts</h2>
-  <ul class="related-posts">
-    
-  </ul>
-</div>
-
-    </div>
-
-  </body>
-</html>
+:ET

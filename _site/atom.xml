@@ -4,7 +4,7 @@
  <title>code</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2022-06-24T07:13:15+09:00</updated>
+ <updated>2022-06-25T08:11:32+09:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>주8</name>
@@ -13,111 +13,86 @@
 
  
  <entry>
-   <title>Oh Yes</title>
-   <link href="http://localhost:4000/spec/source/2014/05/25/oh-yes/"/>
-   <updated>2014-05-25T00:00:00+09:00</updated>
-   <id>http://localhost:4000/spec/source/2014/05/25/oh-yes</id>
-   <content type="html"></content>
- </entry>
- 
- <entry>
-   <title>Whateva</title>
-   <link href="http://localhost:4000/spec/source/2014/05/24/whateva/"/>
-   <updated>2014-05-24T00:00:00+09:00</updated>
-   <id>http://localhost:4000/spec/source/2014/05/24/whateva</id>
-   <content type="html"></content>
- </entry>
- 
- <entry>
-   <title>Hey There</title>
-   <link href="http://localhost:4000/spec/source/2014/05/23/hey-there/"/>
-   <updated>2014-05-23T00:00:00+09:00</updated>
-   <id>http://localhost:4000/spec/source/2014/05/23/hey-there</id>
-   <content type="html"></content>
- </entry>
- 
- <entry>
-   <title>Humor</title>
-   <link href="http://localhost:4000/spec/source/2014/05/22/humor/"/>
-   <updated>2014-05-22T00:00:00+09:00</updated>
-   <id>http://localhost:4000/spec/source/2014/05/22/humor</id>
-   <content type="html"></content>
- </entry>
- 
- <entry>
-   <title>Bleh</title>
-   <link href="http://localhost:4000/spec/source/2014/05/21/bleh/"/>
-   <updated>2014-05-21T00:00:00+09:00</updated>
-   <id>http://localhost:4000/spec/source/2014/05/21/bleh</id>
-   <content type="html"></content>
- </entry>
- 
- <entry>
-   <title>Blah</title>
-   <link href="http://localhost:4000/spec/source/2014/05/20/blah/"/>
-   <updated>2014-05-20T00:00:00+09:00</updated>
-   <id>http://localhost:4000/spec/source/2014/05/20/blah</id>
-   <content type="html"></content>
- </entry>
- 
- <entry>
-   <title>Introducing Hyde</title>
-   <link href="http://localhost:4000/2013/12/28/introducing-hyde/"/>
-   <updated>2013-12-28T00:00:00+09:00</updated>
-   <id>http://localhost:4000/2013/12/28/introducing-hyde</id>
-   <content type="html">&lt;p&gt;Hyde is a brazen two-column &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt; theme that pairs a prominent sidebar with uncomplicated content. It’s based on &lt;a href=&quot;http://getpoole.com&quot;&gt;Poole&lt;/a&gt;, the Jekyll butler.&lt;/p&gt;
+   <title>(항해99) 1주차 웹개발 미니 프로젝트 - 기획</title>
+   <link href="http://localhost:4000/2022/06/20/project01-1/"/>
+   <updated>2022-06-20T00:00:00+09:00</updated>
+   <id>http://localhost:4000/2022/06/20/project01-1</id>
+   <content type="html">&lt;p&gt;동북권 이노베이션캠프에 합격하고 시작된 1주차. &lt;br /&gt;
+배정받은 팀원들과 4일동안(엄밀히 말하면 3.5일) 미니 웹 프로젝트를 시작하게 되었다.&lt;/p&gt;
 
-&lt;h3 id=&quot;built-on-poole&quot;&gt;Built on Poole&lt;/h3&gt;
+&lt;p&gt;주특기를 선택하고 첫 프로젝트라 바로 선택한 주특기를 활용해야 하나 긴장했는데, 아직 배운 게 없으므로 &lt;strong&gt;선택한 주특기에 상관 없이&lt;/strong&gt; &lt;em&gt;Python으로 html을 코딩하는 프로젝트!&lt;/em&gt; &lt;br /&gt;
+각자 선택한 프론트엔드/백엔드 상관 없이 기획한 미니 프로젝트를 협업해서 완성하는 것이 목표다.   &lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;기획&quot;&gt;&lt;strong&gt;기획&lt;/strong&gt;&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;p&gt;욕심은 첫 프로젝트인 만큼 &lt;em&gt;나 이렇게 코딩 잘 한다&lt;/em&gt;는 걸 보여주고픈 마음이 없진 않았지만ㅋㅋ &lt;br /&gt;
+3일동안 만들고 하루동안 테스트해서 제출하는 프로젝트라서 아주 간단한 사이트를 만들어야 했다. &lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;Poole is the Jekyll Butler, serving as an upstanding and effective foundation for Jekyll themes by &lt;a href=&quot;https://twitter.com/mdo&quot;&gt;@mdo&lt;/a&gt;. Poole, and every theme built on it (like Hyde here) includes the following:&lt;/p&gt;
-
+&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt;기획단계에서 염두해둔 것들&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;Complete Jekyll setup included (layouts, config, &lt;a href=&quot;/404&quot;&gt;404&lt;/a&gt;, &lt;a href=&quot;/atom.xml&quot;&gt;RSS feed&lt;/a&gt;, posts, and &lt;a href=&quot;/about&quot;&gt;example page&lt;/a&gt;)&lt;/li&gt;
-  &lt;li&gt;Mobile friendly design and development&lt;/li&gt;
-  &lt;li&gt;Easily scalable text and component sizing with &lt;code&gt;rem&lt;/code&gt; units in the CSS&lt;/li&gt;
-  &lt;li&gt;Support for a wide gamut of HTML elements&lt;/li&gt;
-  &lt;li&gt;Related posts (time-based, because Jekyll) below each post&lt;/li&gt;
-  &lt;li&gt;Syntax highlighting, courtesy Pygments (the Python-based code snippet highlighter)&lt;/li&gt;
+  &lt;li&gt;간단한 사이트일 것&lt;/li&gt;
+  &lt;li&gt;0주차에 받은 강의를 통해 얻은 지식 활용&lt;/li&gt;
+  &lt;li&gt;구현할 수 있는 기능범위를 오버하지 않기&lt;/li&gt;
+  &lt;li&gt;공지받은 필수 포함 사항 활용하기&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;hyde-features&quot;&gt;Hyde features&lt;/h3&gt;
+&lt;hr /&gt;
 
-&lt;p&gt;In addition to the features of Poole, Hyde adds the following:&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;Sidebar includes support for textual modules and a dynamically generated navigation with active link support&lt;/li&gt;
-  &lt;li&gt;Two orientations for content and sidebar, default (left sidebar) and &lt;a href=&quot;https://github.com/poole/lanyon#reverse-layout&quot;&gt;reverse&lt;/a&gt; (right sidebar), available via &lt;code&gt;&amp;lt;body&amp;gt;&lt;/code&gt; classes&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/poole/hyde#themes&quot;&gt;Eight optional color schemes&lt;/a&gt;, available via &lt;code&gt;&amp;lt;body&amp;gt;&lt;/code&gt; classes&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h4 id=&quot;1-주제-정하기&quot;&gt;1. 주제 정하기&lt;/h4&gt;
+&lt;p&gt;주제를 정하기 위한 브레인스토밍을 하면서 팀원들의 관심사에 대해 이야기를 나눴고 구체적인 모습이 나온 게 2가지&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;나만의 커스텀 레시피&lt;/strong&gt; &lt;br /&gt;
+ 카페 커스텀메뉴나 서브웨이 꿀조합 같은 나만 알고 있는 레시피 조합을 공유하는 사이트&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;유튜브 쇼츠 공유&lt;/strong&gt; &lt;br /&gt;
+ 관심있는 유튜브 쇼츠를 공유하는 사이트&lt;/li&gt;
+&lt;/ol&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://github.com/poole/hyde#readme&quot;&gt;Head to the readme&lt;/a&gt; to learn more.&lt;/p&gt;
+&lt;p&gt;이 중에서 유튜브 쇼츠로 의견이 좁혀졌고, 배운 걸 어떻게 활용해서 사이트를 구성하면 좋을지까지 그려지면서 비교적 빨리 기획이 정해졌다. &lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;browser-support&quot;&gt;Browser support&lt;/h3&gt;
+&lt;h4 id=&quot;2-와이어프레임&quot;&gt;2. 와이어프레임&lt;/h4&gt;
+&lt;p&gt;구체적으로 클라이언트단에서 화면이 어떻게 보여질 것인가를 기획하는 것으로, 대화만으론 정해지기 어렵겠다 싶어 각자 와이어프레임을 구성해서 발표하기로 했다.&lt;/p&gt;
 
-&lt;p&gt;Hyde is by preference a forward-thinking project. In addition to the latest versions of Chrome, Safari (mobile and desktop), and Firefox, it is only compatible with Internet Explorer 9 and above.&lt;/p&gt;
+&lt;p&gt;킹갓 그림판으로ㅋㅋ 열심히 그려서 발표를 했다. 그릴 땐 힘들었으나, 도형으로 그려두니까 보기 깔끔해서 좋았다. &lt;br /&gt;
+&lt;em&gt;(물론 두번다시는 하고 싶지 않지만)&lt;/em&gt;&lt;br /&gt;
+그래도 결과적으로 보기에 깔끔해서 와이어프레임을 그리는 건 내가 하기로… 좋은 건진 모르겠지만ㅋㅋ &lt;br /&gt;
+&lt;em&gt;(다시 말하지만 두번다시는 하고 싶지 않다)&lt;/em&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;download&quot;&gt;Download&lt;/h3&gt;
+&lt;p&gt;각자의 와이어프레임에서 비슷한 구성인 것은(예컨대 로그인/회원가입 폼같은) fix하고 메인이라든지 포스팅 페이지같은 건 발표된 시안에서 의견을 수렴하여 정했고 내가 다시 킹림판으로 그렸다…ㅋ &lt;br /&gt;
+&lt;em&gt;(다시 말하지만 두번다시는…이하생략)&lt;/em&gt; &lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;Hyde is developed on and hosted with GitHub. Head to the &lt;a href=&quot;https://github.com/poole/hyde&quot;&gt;GitHub repository&lt;/a&gt; for downloads, bug reports, and features requests.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt;와이어프레임&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;처음 냈던 와이어프레임 &lt;br /&gt;
+&lt;img src=&quot;/public/img/frame01.jpg&quot; alt=&quot;기획한 와이어프레임&quot; title=&quot;기획한 와이어프레임&quot; /&gt; &lt;br /&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;결정된 와이어프레임 &lt;br /&gt;
+&lt;img src=&quot;/public/img/frame_final.jpg&quot; alt=&quot;최종 와이어프레임&quot; title=&quot;최종 와이어프레임&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
 
-&lt;p&gt;Thanks!&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>What's Jekyll?</title>
-   <link href="http://localhost:4000/2012/02/06/whats-jekyll/"/>
-   <updated>2012-02-06T00:00:00+09:00</updated>
-   <id>http://localhost:4000/2012/02/06/whats-jekyll</id>
-   <content type="html">&lt;p&gt;&lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt; is a static site generator, an open-source tool for creating simple yet powerful websites of all shapes and sizes. From &lt;a href=&quot;https://github.com/mojombo/jekyll/blob/master/README.markdown&quot;&gt;the project’s readme&lt;/a&gt;:&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;Jekyll is a simple, blog aware, static site generator. It takes a template directory […] and spits out a complete, static website suitable for serving with Apache or your favorite web server. This is also the engine behind GitHub Pages, which you can use to host your project’s page or blog right here from GitHub.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;h3 id=&quot;마무리&quot;&gt;&lt;strong&gt;마무리&lt;/strong&gt;&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;p&gt;프로젝트 이름은 &lt;strong&gt;Too Shorts&lt;/strong&gt;로 정해졌다. &lt;br /&gt;
+프로젝트명에 대해 얘기하다가 유튜브 쇼츠들이니까 &lt;em&gt;many의 의미 + 강조의 의미&lt;/em&gt;해서 무지성으로 던졌는데 딱히 더 좋은 아이디어가 나오지 않아 그냥 정해졌다.
+쇼츠니까 예전 슉슈슈슉 밈을 활용한 아이디어도 제시되었고 참신했지만 너무 길다는 이유로(ㅋㅋ) 제외되었다…&lt;/p&gt;
 
-&lt;p&gt;It’s an immensely useful tool and one we encourage you to use here with Hyde.&lt;/p&gt;
+&lt;p&gt;점심 먹고 와이어프레임을 그려서 제출하고, 협업을 위한 Git설치 및 GitHub 가입(그렇다 이날 처음 깃헙 가입을 했다ㅋㅋ)을 하고 팀장님이 만든 리포에 초대받고, 제출 하라는 거 뚝딱뚝딱하고 강의영상 보다가 면담 호출받고 매니저님과 대화하다가 하루가 끝났다. &lt;br /&gt;
+내일 역할분담 및 코딩이 시작될텐데 기대 반 걱정 반이다. 다른 팀원들에 비해 내가 개발 지식이 많이 부족해서ㅠㅠ 빨리 따라잡도록 해야겠다. &lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;Find out more by &lt;a href=&quot;https://github.com/mojombo/jekyll&quot;&gt;visiting the project on GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/ferrariRoma/too_shorts&quot; title=&quot;Too Shorts GitHub&quot;&gt;Too Shorts GitHub&lt;/a&gt;&lt;/p&gt;
 </content>
  </entry>
  
