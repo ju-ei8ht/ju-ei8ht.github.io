@@ -1,0 +1,27 @@
+# Dependencies
+gems:             [jekyll-paginate]
+markdown:         kramdown
+highlighter:      pygments
+
+# Permalinks
+permalink:        pretty
+# relative_permalinks: true
+
+# Setup
+title:            code
+tagline:          'A Jekyll theme'
+description:      '해결한 코드 저장소'
+url:              https://ju-ei8ht.github.io/
+baseurl:          /
+
+author:
+  name:           '주8'
+  # url:            https://twitter.com/mdo
+
+paginate:         5
+
+# Custom vars
+version:          2.1.0
+
+github:
+  repo:           https://github.com/ju-ei8ht
