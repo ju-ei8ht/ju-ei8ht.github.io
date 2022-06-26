@@ -14,3 +14,5 @@ rdoc
 spec/reports
 spec/dest
 tmp
+_site/public/js/tag_query-slash.js
+public/js/tag_query-slash.js
