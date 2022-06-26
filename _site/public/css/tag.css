@@ -1,6 +1,11 @@
+.posts>.tags{
+    border-bottom: 1px solid #ddd;
+    padding-bottom:30px;
+}
+
 .tags{
     font-size:0;
-    margin-bottom:50px;
+    margin-bottom:30px;
     cursor: pointer;
 }
 .tags>a{
@@ -14,8 +19,9 @@
     border:1px dashed #000;
     border-radius: 5px;
     font-size: 14px;
-    margin:0 5px;
+    margin:5px;
     box-sizing: border-box;
+    display: inline-block;
 }
 .tag.selected{
     background: #000;
