@@ -120,7 +120,7 @@
 
 <p>이전에는 html(클라이언트단)에서 ajax로 get타입을 받아와서</p>
 
-<pre><code class="language-javascript">let word = ''
+<pre><code class="language-javascript">let word = '{{ word }}'
 $.ajax({
     type: "GET",
     url: `apiUrl/${word}`,
@@ -136,6 +136,7 @@ $.ajax({
     }
 });
 </code></pre>
+
 <p>-&gt; api 요청보내기</p>
 
 <pre><code class="language-javascript">$("selector").text(response["변수"]);
