@@ -1,0 +1,26 @@
+.tags{
+    font-size:0;
+    margin-bottom:50px;
+    cursor: pointer;
+}
+.tags>a{
+    color:inherit;
+}
+.tags>a:hover{
+    text-decoration: none;
+}
+.tag{  
+    padding:5px;
+    border:1px dashed #000;
+    border-radius: 5px;
+    font-size: 14px;
+    margin:0 5px;
+    box-sizing: border-box;
+}
+.tag.selected{
+    background: #000;
+    color:#fff;
+}
+.hidden{
+    display: none;
+}
