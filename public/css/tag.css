@@ -1,6 +1,7 @@
 .posts>.tags{
     border-bottom: 1px solid #ddd;
     padding-bottom:30px;
+    text-align: center;
 }
 
 .tags{
