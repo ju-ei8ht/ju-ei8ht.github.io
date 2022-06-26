@@ -9,7 +9,7 @@ layout: default
     <div class="tags">
     {% for tag in page.tags %}
       {% if site.data.tags contains tag %}
-        <a href="{{ site.baseurl }}/posts?tag={{ tag }}">
+        <a href="{{ site.baseurl }}/posts/?tag={{ tag }}">
           <span class="tag">{{ site.data.format[tag] }}</span>
         </a>
       {% endif %}

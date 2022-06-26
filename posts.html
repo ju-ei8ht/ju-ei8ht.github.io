@@ -11,6 +11,7 @@ title: Posts
 </script>
 <div class="posts">
   <div class="tags">
+    <span class="tag" data-tag="all">All</span>
     {% for tag in site.data.tags %}
       <span class="tag" data-tag="{{tag}}">
         {{ site.data.format[tag] }}
@@ -18,7 +19,7 @@ title: Posts
     {% endfor %}
   </div>
   {% for post in site.posts %}
-  <div class="post" {% if post.tags %}
+  <div class="post" data-all {% if post.tags %}
       {% for tag in post.tags %}
         data-{{ tag }}
       {% endfor %}
@@ -33,7 +34,7 @@ title: Posts
       <div class="tags">
       {% for tag in post.tags %}
         {% if site.data.tags contains tag %}
-          <a href="{{ site.baseurl }}/posts?tag={{ tag }}">
+          <a href="{{ site.baseurl }}/posts/?tag={{ tag }}">
             <span class="tag" data-tag="{{tag}}">{{ site.data.format[tag] }}</span>
           </a>
         {% endif %}
