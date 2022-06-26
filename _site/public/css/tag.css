@@ -6,7 +6,6 @@
 .tags{
     font-size:0;
     margin-bottom:30px;
-    cursor: pointer;
 }
 .tags>a{
     color:inherit;
@@ -22,6 +21,7 @@
     margin:5px;
     box-sizing: border-box;
     display: inline-block;
+    cursor: pointer;
 }
 .tag.selected{
     background: #000;

@@ -5,7 +5,6 @@ $(function(){
     let urlLen = urlSplit.length;
     let queryParent = urlSplit[urlLen-2];
     const queryTag = getQuery().tag;
-    console.log(queryTag);
     if(queryTag){
         currentTag = queryTag;
         filterByName(currentTag)
