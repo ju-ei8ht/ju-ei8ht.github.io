@@ -1,0 +1,200 @@
+I"�<h3 id="di-의존성-주입">DI (의존성 주입)</h3>
+<hr />
+<h4 id="강한-결합의-문제">강한 결합의 문제</h4>
+<hr />
+<p>예를들어 Controller에서 Service의 객체를 생성하여 사용하고 Service에서 Repository의 객체를 생성하여 사용하고 Repository에서 객체를 선언한다면, Repository 생성자가 변경되었을 때 모든 Controller와 Service의 코드 변경이 필요한데 이 문제를 해결하기 위해서</p>
+<blockquote>
+  <p><strong>강한 결합 해결방법</strong></p>
+  <ol>
+    <li>각 객체에 대한 객체 생성은 딱 1번만</li>
+    <li>생성된 객체를 모든 곳에서 재사용</li>
+  </ol>
+</blockquote>
+
+<p>해야 한다.</p>
+
+<p>예를들면,</p>
+<ol>
+  <li>Repository에서 클래스 선언 및 객체 생성을 하고
+    <pre><code class="language-java">public class Repository{...}
+//객체 생성
+Repository repository = new Repository();
+</code></pre>
+  </li>
+  <li>Service에서 클래스 선언 및 객체 생성(repository 사용)
+    <pre><code class="language-java">Class Sevice{
+ private final Repository repository;
+ //repository 객체 사용
+ public Service(Repository repository){
+     this.repository = repository;//new Repository(); 아니고
+ }
+}
+//객체 생성
+Service sevice = new Service(repository);
+</code></pre>
+  </li>
+  <li>Controller 선언(service 사용)
+    <pre><code class="language-java">Class Controller{
+ private final Service service;
+ //service 객체 사용
+ public Controller(Service service){
+     this.service = service;//new Service(); 아니고
+ }
+}
+</code></pre>
+  </li>
+</ol>
+
+<p>이렇게 하면 만약 Repository에서 생성자가 변경되어도 Service와 Controller가 변경될 필요가 없다. <br />
+결론적으로 <em>강한 결합에서 느슨한 결합</em>으로 바뀐 것이다.</p>
+
+<hr />
+
+<p><br /><br /></p>
+
+<h3 id="ioc-inversion-of-control">IoC (Inversion of Control)</h3>
+<hr />
+<p>제어의 역전이란 뜻으로 프로그램의 제어 흐름이 뒤바뀐 걸 의미한다. <br />
+일반적으로는 사용자가 자신이 필요한 객체를 생성해서 사용했다면 DI(의존성 주입)으로 인해 IoC 즉, 제어의 역전이 일어나면서(예를 들어, 전에는 Repository를 만들고 Service -&gt; Controller를 생성했다면 IoC에 의해 Controller -&gt; Service -&gt; Repository 순이 되었다는 것?)</p>
+<ul>
+  <li>용도에 맞게 필요한 객체를 가져다 사용</li>
+  <li>사용할 객체가 어떻게 만들어졌는지 알 필요 없음</li>
+  <li>실생활 예제) 가위의 용도별 사용
+    <ul>
+      <li>음식을 자를 때 필요한 부엌가위(생성되어 있는 객체 kitchenScissors)</li>
+      <li>무늬를 내며 자를 때 필요한 핑킹가위(생성되어 있는 객체 pinkingShears)</li>
+      <li>정원 나무를 다듬을 때 필요한 전지가위(생성되어 있는 객체 pruningShears)</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+<p><br /><br /></p>
+
+<h3 id="bean">Bean</h3>
+<hr />
+<p>앞선 DI를 사용하기 위해서는 객체 생서잉 우선되어야 했다. 그리고 그 필요한 객체를 생성하여 관리하는 역할을 대신 해주는 게 바로 <strong>스프링 프레임워크</strong>다. <br />
+그리고 Bean은 스프링이 관리하는 객체고, 스프링 IoC 컨테이너는 빈을 모아둔 통이라고 생각하면 된다.</p>
+
+<p><br /><br /></p>
+
+<h4 id="스프링-빈-등록-방법">스프링 빈 등록 방법</h4>
+<hr />
+<ol>
+  <li>@Component
+클래스 선언 위에 설정하고
+    <pre><code class="language-java">@Component
+public class TestService{...}
+</code></pre>
+    <p>스프링 서버가 뜰 때 스프링 IoC에 빈 저장
+```java</p>
+  </li>
+</ol>
+
+<p>//@Component 클래스에 대해 스프링이 해주는 일</p>
+
+<p>//1. Service 객체 생성
+TestService testService = new TestService();
+//2. 스프링 IoC 컨테이너에 빈(testService) 저장
+// testService -&gt; 스프링 IoC 컨테이너</p>
+<pre><code>스프링 빈 이름: 클래스 앞글자만 소문자로 변경
+public class TestService -&gt; testService   
+
+빈 아이콘 확인
+![img](https://teamsparta.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fbb112785-5de6-4ff5-adcb-fabcfc7bc5fb%2FUntitled.png?table=block&amp;id=a33e23b4-6415-47fb-a41a-893204fd6b20&amp;spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&amp;width=890&amp;userId=&amp;cache=v2)   
+
+&gt; **@Component 적용 조건**
+&gt; * @ComponentScan에 설정해준 packages 위치와 하위 packages들
+&gt; * @SpringBootAplication에 의해 default로 설정되어 있음   
+
+2. @Bean
+직접 객체를 생성하여 빈으로 등록 요청
+```java
+@Configuration
+public class BeanConfiguration{
+    @Bean
+    public TestRepository testRepository(){...}
+}
+</code></pre>
+<p>스프링 서버가 뜰 때 스프링 IoC에 빈 저장</p>
+<pre><code class="language-java">//1. @Bean 설정된 함수 호출
+TestRepository testRepository = beanConfiguration.testRepository();
+//2. 스프링 IoC 컨테이너에 빈(testRepository) 저장
+//testRepository -&gt; 스프링 IoC 컨테이너
+</code></pre>
+<p>스프링 빈 이름: @Bean이 설정된 함수명
+public TestRepository testRepository(){…} -&gt; testRepository</p>
+
+<p>빈 아이콘 확인 -&gt; 스프링 IoC에 빈이 등록될 것이라는 표시</p>
+
+<p><br /><br /></p>
+
+<h4 id="스프링-빈-사용방법">스프링 빈 사용방법</h4>
+<hr />
+<ol>
+  <li>@Autowired
+멤버변수 선언 위에 @Autowired를 하면 스프링에 의해 DI됨
+    <pre><code class="language-java">@Component
+public class TestService{
+ @Autowired
+ private TestRepository testRepository;
+}
+</code></pre>
+    <p>빈을 사용할 함수 위에 @Autowired를 하면 스프링에 의해 DI됨
+```java
+@Component
+public class TestService{
+ private final TestRepository testRepository;
+ @Autowired
+ public TestService(TestRepository testRepository){
+     this.testRepository = testRepository;
+ }</p>
+  </li>
+</ol>
+
+<p>}</p>
+<pre><code>
+&gt; **@Autowired 적용 조건**   
+&gt; 스프링 IoC 컨테이너에 의해 관리되는 클래스에서만 가능   
+
+&gt; **@Autowired 생략 조건**
+&gt; * Spring 4.3버전부터 생략 가능
+&gt; * 생성자 선언이 1개일 때만 생략 가능
+&gt; * Lombok의 @RequiredArgsConstructor를 사용하면   
+```java
+@RequiredArgsConstructor // final로 선언된 멤버 변수를 자동으로 생성합니다.
+@RestController // JSON으로 데이터를 주고받음을 선언합니다.
+public class TestController {
+
+    private final TestService testService;
+    
+    // 생략 가능
+		// @Autowired
+		// public TestController(TestService testService) {
+		//     this.testService = testService;
+		// }
+}
+</code></pre>
+
+<ol>
+  <li>ApplicationContext <br />
+스프링 IoC 컨테이너에서 빈을 수동으로 가져오는 방법
+    <pre><code class="language-java">@Component
+public class TestService {
+ private final TestRepository testRepository;
+
+ @Autowired
+ public TestService(ApplicationContext context) {
+     // 1.'빈' 이름으로 가져오기
+     TestRepository testRepository = (TestRepository) context.getBean("testRepository");
+     // 2.'빈' 클래스 형식으로 가져오기
+     // TestRepository testRepository = context.getBean(TestRepository.class);
+     this.testRepository = testRepository;
+ }	
+}
+</code></pre>
+    <hr />
+    <p>출처: <a href="https://teamsparta.notion.site/Spring-1-1413ba9c45744297953ea1acfec904e2#4b10d12b76fc4e2b86d1f9d3b244df0d">스파르타코딩클럽 Spring 심화반</a></p>
+  </li>
+</ol>
+:ET

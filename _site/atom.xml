@@ -4,13 +4,240 @@
  <title>Develop</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2022-07-03T18:42:37+09:00</updated>
+ <updated>2022-07-10T19:17:17+09:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>주8</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>DI, IoC, Bean</title>
+   <link href="http://localhost:4000/2022/07/10/wil03/"/>
+   <updated>2022-07-10T00:00:00+09:00</updated>
+   <id>http://localhost:4000/2022/07/10/wil03</id>
+   <content type="html">&lt;h3 id=&quot;di-의존성-주입&quot;&gt;DI (의존성 주입)&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;h4 id=&quot;강한-결합의-문제&quot;&gt;강한 결합의 문제&lt;/h4&gt;
+&lt;hr /&gt;
+&lt;p&gt;예를들어 Controller에서 Service의 객체를 생성하여 사용하고 Service에서 Repository의 객체를 생성하여 사용하고 Repository에서 객체를 선언한다면, Repository 생성자가 변경되었을 때 모든 Controller와 Service의 코드 변경이 필요한데 이 문제를 해결하기 위해서&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;강한 결합 해결방법&lt;/strong&gt;&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;각 객체에 대한 객체 생성은 딱 1번만&lt;/li&gt;
+    &lt;li&gt;생성된 객체를 모든 곳에서 재사용&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;해야 한다.&lt;/p&gt;
+
+&lt;p&gt;예를들면,&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Repository에서 클래스 선언 및 객체 생성을 하고
+    &lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;public class Repository{...}
+//객체 생성
+Repository repository = new Repository();
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Service에서 클래스 선언 및 객체 생성(repository 사용)
+    &lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;Class Sevice{
+ private final Repository repository;
+ //repository 객체 사용
+ public Service(Repository repository){
+     this.repository = repository;//new Repository(); 아니고
+ }
+}
+//객체 생성
+Service sevice = new Service(repository);
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Controller 선언(service 사용)
+    &lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;Class Controller{
+ private final Service service;
+ //service 객체 사용
+ public Controller(Service service){
+     this.service = service;//new Service(); 아니고
+ }
+}
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;이렇게 하면 만약 Repository에서 생성자가 변경되어도 Service와 Controller가 변경될 필요가 없다. &lt;br /&gt;
+결론적으로 &lt;em&gt;강한 결합에서 느슨한 결합&lt;/em&gt;으로 바뀐 것이다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;ioc-inversion-of-control&quot;&gt;IoC (Inversion of Control)&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;p&gt;제어의 역전이란 뜻으로 프로그램의 제어 흐름이 뒤바뀐 걸 의미한다. &lt;br /&gt;
+일반적으로는 사용자가 자신이 필요한 객체를 생성해서 사용했다면 DI(의존성 주입)으로 인해 IoC 즉, 제어의 역전이 일어나면서(예를 들어, 전에는 Repository를 만들고 Service -&amp;gt; Controller를 생성했다면 IoC에 의해 Controller -&amp;gt; Service -&amp;gt; Repository 순이 되었다는 것?)&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;용도에 맞게 필요한 객체를 가져다 사용&lt;/li&gt;
+  &lt;li&gt;사용할 객체가 어떻게 만들어졌는지 알 필요 없음&lt;/li&gt;
+  &lt;li&gt;실생활 예제) 가위의 용도별 사용
+    &lt;ul&gt;
+      &lt;li&gt;음식을 자를 때 필요한 부엌가위(생성되어 있는 객체 kitchenScissors)&lt;/li&gt;
+      &lt;li&gt;무늬를 내며 자를 때 필요한 핑킹가위(생성되어 있는 객체 pinkingShears)&lt;/li&gt;
+      &lt;li&gt;정원 나무를 다듬을 때 필요한 전지가위(생성되어 있는 객체 pruningShears)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;bean&quot;&gt;Bean&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;p&gt;앞선 DI를 사용하기 위해서는 객체 생서잉 우선되어야 했다. 그리고 그 필요한 객체를 생성하여 관리하는 역할을 대신 해주는 게 바로 &lt;strong&gt;스프링 프레임워크&lt;/strong&gt;다. &lt;br /&gt;
+그리고 Bean은 스프링이 관리하는 객체고, 스프링 IoC 컨테이너는 빈을 모아둔 통이라고 생각하면 된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;스프링-빈-등록-방법&quot;&gt;스프링 빈 등록 방법&lt;/h4&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+  &lt;li&gt;@Component
+클래스 선언 위에 설정하고&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;@Component
+public class TestService{...}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;스프링 서버가 뜰 때 스프링 IoC에 빈 저장&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;//@Component 클래스에 대해 스프링이 해주는 일
+
+//1. Service 객체 생성
+TestService testService = new TestService();
+//2. 스프링 IoC 컨테이너에 빈(testService) 저장
+// testService -&amp;gt; 스프링 IoC 컨테이너
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;스프링 빈 이름: 클래스 앞글자만 소문자로 변경
+public class TestService -&amp;gt; testService&lt;/p&gt;
+
+&lt;p&gt;빈 아이콘 확인
+&lt;img src=&quot;https://teamsparta.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fbb112785-5de6-4ff5-adcb-fabcfc7bc5fb%2FUntitled.png?table=block&amp;amp;id=a33e23b4-6415-47fb-a41a-893204fd6b20&amp;amp;spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&amp;amp;width=890&amp;amp;userId=&amp;amp;cache=v2&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;@Component 적용 조건&lt;/strong&gt;&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;@ComponentScan에 설정해준 packages 위치와 하위 packages들&lt;/li&gt;
+    &lt;li&gt;@SpringBootAplication에 의해 default로 설정되어 있음&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;@Bean
+직접 객체를 생성하여 빈으로 등록 요청&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;@Configuration
+public class BeanConfiguration{
+    @Bean
+    public TestRepository testRepository(){...}
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;스프링 서버가 뜰 때 스프링 IoC에 빈 저장&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;//1. @Bean 설정된 함수 호출
+TestRepository testRepository = beanConfiguration.testRepository();
+//2. 스프링 IoC 컨테이너에 빈(testRepository) 저장
+//testRepository -&amp;gt; 스프링 IoC 컨테이너
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;스프링 빈 이름: @Bean이 설정된 함수명
+public TestRepository testRepository(){…} -&amp;gt; testRepository&lt;/p&gt;
+
+&lt;p&gt;빈 아이콘 확인 -&amp;gt; 스프링 IoC에 빈이 등록될 것이라는 표시&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;스프링-빈-사용방법&quot;&gt;스프링 빈 사용방법&lt;/h4&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+  &lt;li&gt;@Autowired
+멤버변수 선언 위에 @Autowired를 하면 스프링에 의해 DI됨&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;@Component
+public class TestService{
+    @Autowired
+    private TestRepository testRepository;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;빈을 사용할 함수 위에 @Autowired를 하면 스프링에 의해 DI됨&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;@Component
+public class TestService{
+    private final TestRepository testRepository;
+    @Autowired
+    public TestService(TestRepository testRepository){
+        this.testRepository = testRepository;
+    }
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;@Autowired 적용 조건&lt;/strong&gt; &lt;br /&gt;
+스프링 IoC 컨테이너에 의해 관리되는 클래스에서만 가능&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;@Autowired 생략 조건&lt;/strong&gt;&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Spring 4.3버전부터 생략 가능&lt;/li&gt;
+    &lt;li&gt;생성자 선언이 1개일 때만 생략 가능&lt;/li&gt;
+    &lt;li&gt;Lombok의 @RequiredArgsConstructor를 사용하면&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;@RequiredArgsConstructor // final로 선언된 멤버 변수를 자동으로 생성합니다.
+@RestController // JSON으로 데이터를 주고받음을 선언합니다.
+public class TestController {
+
+    private final TestService testService;
+    
+    // 생략 가능
+		// @Autowired
+		// public TestController(TestService testService) {
+		//     this.testService = testService;
+		// }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;ApplicationContext &lt;br /&gt;
+스프링 IoC 컨테이너에서 빈을 수동으로 가져오는 방법&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;@Component
+public class TestService {
+    private final TestRepository testRepository;
+
+    @Autowired
+    public TestService(ApplicationContext context) {
+        // 1.&apos;빈&apos; 이름으로 가져오기
+        TestRepository testRepository = (TestRepository) context.getBean(&quot;testRepository&quot;);
+        // 2.&apos;빈&apos; 클래스 형식으로 가져오기
+        // TestRepository testRepository = context.getBean(TestRepository.class);
+        this.testRepository = testRepository;
+    }	
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;출처: &lt;a href=&quot;https://teamsparta.notion.site/Spring-1-1413ba9c45744297953ea1acfec904e2#4b10d12b76fc4e2b86d1f9d3b244df0d&quot;&gt;스파르타코딩클럽 Spring 심화반&lt;/a&gt;&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>객체지향 프로그래밍과 JVM</title>
