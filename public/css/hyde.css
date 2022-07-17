@@ -53,6 +53,29 @@ html {
  * out above content in mobile and later moves to the side with wider viewports.
  */
 
+/*
+  2022-07-17 추가
+*/
+p.menu{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:#fff;
+  position:fixed;
+  width:40px;
+  height:40px;
+  border-radius: 50%;
+  background-color: #202020;
+  top:20px;
+  left:20px;
+  cursor: pointer;
+  z-index: 9;
+}
+.content.container.hide{
+  margin:auto;
+}
+
+
 .sidebar {
   text-align: center;
   padding: 2rem 1rem;
