@@ -1,7 +1,0 @@
-I"�<h3 id="di의존성-주입">DI(의존성 주입)</h3>
-<hr />
-
-<h4 id="강한-결합의-문제">강한 결합의 문제</h4>
-<hr />
-<p>예를들어 Controller에서 Service의 객체를 생성하여 사용하고 Service에서 Repository의 객체를 생성하여 사용하고 Repository에서 객체를 선언한다면, Repository 생성자가 변경되었을 때 모든 Controller와 Service의 코드 변경이 필요한데 이 문제를 해결하기 위해서</p>
-:ET

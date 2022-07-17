@@ -1,0 +1,266 @@
+I"� <h3 id="orm">ORM</h3>
+<hr />
+<blockquote>
+  <p>ORM: Object-Relation Mapping</p>
+
+  <p>Object: <strong>객체</strong>지향 언어(자바, 파이썬) <br />
+Relational: <strong>관계형</strong> 데이터베이스(H2,MySQL)</p>
+</blockquote>
+
+<p>객체와 관계형 데이터베이스의 데이터를 자동으로 연결(mapping)해주는 것</p>
+
+<p><br /><br /></p>
+
+<h4 id="orm이-없으면-웹서버-개발은-못-하나">ORM이 없으면 웹서버 개발은 못 하나?</h4>
+<hr />
+<p>ORM이 없어도 웹서버 개발 가능은 하지만…</p>
+<ul>
+  <li>ORM이 없는 환경에서는 백엔드 개발자가 비즈니스 로직 개발보다 SQL 작성에 더 많은 시간을 할애하게 됨.</li>
+  <li>SQL 작성이 단순하고 반복적인데 실수하기는 쉬움</li>
+  <li>그리고 웹 서버 개발 언어와 관계형 데이터베이스 언어의 목적 및 사용방법이 다름</li>
+</ul>
+
+<p><br /><br /></p>
+
+<h4 id="백엔드-개발자는-db에-대해-몰라도-되나">백엔드 개발자는 DB에 대해 몰라도 되나?</h4>
+<hr />
+<p>그렇지 않다ㅠㅠ <br />
+DB 테이블 설계라든가 SQL Query 성능 확보 등을 위해서도 알아야 함</p>
+
+<hr />
+
+<p><br /><br /></p>
+
+<h3 id="sql">SQL</h3>
+<hr />
+<p>SQL은 관계형 데이터베이스 관리 시스템의 데이터를 관리하기 위해 설계된 특수 목적의 프로그래밍 언어다. <br />
+관계형 데이터베이스 관리 시스템에서 자료의 검색과 관리, 데이터베이스 스키마 생성과 수정, 데이터베이스 객체 접근 조정 관리를 위해 고안되었다. (출처 위키백과)</p>
+
+<p>대표적인 데이터베이스 관리 시스템은 MySql이 있는데… query 매번 까먹어서 정리된 사이트 열어두고 참고하며 했던 기억이…ㅎㅎ <br />
+근데 확실히 스프링에서 JPA로 처리가 가능하니까 일일이 insert into 안 써도 되고 좋긴 하다ㅋㅋ 아직은 모르는 게 많아서 애증의 존재지만.</p>
+
+<hr />
+
+<p><br /><br /></p>
+
+<h3 id="스프링-mvc">스프링 MVC</h3>
+<hr />
+<blockquote>
+  <p>스프링 MVC란 <br />
+Model- View - Controller 디자인 패턴</p>
+</blockquote>
+
+<p><br /></p>
+
+<h4 id="response">Response</h4>
+<hr />
+
+<p>server에서 html을 내려주는 경우</p>
+<ol>
+  <li>정적(static) 웹 페이지
+    <ul>
+      <li>Controller</li>
+    </ul>
+    <ul>
+      <li>Client의 요청을 Model로 받아 처리
+        <ul>
+          <li>예) 회원가입을 위한 개인정보들(id, password, name)</li>
+        </ul>
+      </li>
+      <li>Client에게 View(정적 웹페이지, html)를 내려줌</li>
+    </ul>
+  </li>
+  <li>동적(dynamic) 웹 페이지
+    <ul>
+      <li>Controller</li>
+    </ul>
+    <ul>
+      <li>Client의 요청을 Model로 받아 처리</li>
+      <li>Tamplate engine에게 View, Model 전달
+        <ul>
+          <li>View: 동적 html 파일</li>
+          <li>Model: View에 적용할 정보들</li>
+        </ul>
+      </li>
+      <li>Template engine
+        <ul>
+          <li>View에 Model을 적용 -&gt; 동적 웹페이지 생성
+            <ul>
+              <li>예) 로그인 성공 시, “로그인된 사용자의 ID”를 페이지에 추가</li>
+              <li>Template engine 종류: 타임리프(Thymeleaf), Groovy, FreeMarker, Jade 등(스프링에서 JSP 이용은 추천하지 않고 있음)</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>Client에게 View(동적 웹페이지, html)를 내려줌</li>
+    </ul>
+  </li>
+</ol>
+
+<hr />
+
+<p>사실 요즘은 json 등으로 서버와 클라이언트 간에 데이터 주고받는 게 기본이라 딱히 정적인 웹페이지 / 동적인 웹페이지 구분이 없는 듯?</p>
+
+<p><br /><br /></p>
+
+<p><strong>Controller와 HTTP Response 메시지</strong></p>
+
+<p><br /></p>
+
+<table style="text-align:center;">
+    <thead>
+        <tr>
+            <th colspan="3">Controller</th>
+            <th colspan="2">HTTP Response</th>
+        </tr>
+        <tr>
+            <th>@ResponseBody</th>
+            <th>Return 타입</th>
+            <th>Return 값</th>
+            <th>Header</th>
+            <th>Body</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td rowspan="2">X</td>
+            <td rowspan="2">String</td>
+            <td>{View name}</td>
+            <td>Content-Type:text/html</td>
+            <td>View(HTML)의 text 내용(타입리프 기준)
+            /templates/{View name}.html</td>
+        </tr>
+        <tr>
+            <td>redirect:/{redirect URL}</td>
+            <td>Location:{Host URL}/{redirect URL}</td>
+            <td>없음</td>
+        </tr>
+        <tr>
+            <td rowspan="2">O</td>
+            <td>String</td>
+            <td>{Text}</td>
+            <td>Content=Type:text/html</td>
+            <td>{Text}</td>
+        </tr>
+        <tr>
+            <td>String 외</td>
+            <td>java 객체</td>
+            <td>Content-Type:application/json</td>
+            <td>JSON
+            (스프링이 java객체 -&gt; json 변환)</td>
+        </tr>
+    </tbody>
+</table>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages">HTTP메시지</a></p>
+
+<p><br /><br /></p>
+
+<h4 id="스프링-mvc-동작원리">스프링 MVC 동작원리</h4>
+<hr />
+<p>스프링으로 작업하면서 Controller가 시작점과 끝점으로 보이지만, 사실 스프링이 뒤에서 많은 부분을 처리해주고 있다는 거…</p>
+
+<p><br /></p>
+
+<p><img src="https://teamsparta.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F2d7b8346-03a9-4fe8-b8e4-ce9ca79df02d%2FUntitled.png?table=block&amp;id=94f0bb39-4a3c-4c11-94a6-4f2bcb2bc680&amp;spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&amp;width=1920&amp;userId=&amp;cache=v2" alt="img" /></p>
+
+<ol>
+  <li>Client -&gt; DispatcherServlet
+    <ul>
+      <li>가장 앞 단에서 요청을 받아 FrontController라고도 불림</li>
+    </ul>
+  </li>
+  <li>DispatcherServlet -&gt; Controller
+    <ul>
+      <li>API를 처리해 줄 Controller를 찾아 요청을 전달</li>
+      <li>Handler mapping에는 API path와 Controller 함수가 매칭되어 있음 -&gt; 함수 이름을 내 마음대로 설정 가능했던 이유</li>
+      <li>Controller에서 요청하는 Request의 정보(Model) 전달</li>
+    </ul>
+  </li>
+  <li>Controller -&gt; DispatcherServlet
+    <ul>
+      <li>Controller가 Client로 받은 API 요청을 처리</li>
+      <li>Model 정보와 View 정보를 DispatcherServlet으로 전달</li>
+    </ul>
+  </li>
+  <li>DispatcherServlet -&gt; Client
+    <ul>
+      <li>ViewResolver를 통해 View에 Model을 적용</li>
+      <li>View를 Client에게 응답으로 전달</li>
+    </ul>
+  </li>
+</ol>
+
+<hr />
+
+<p><br /><br /></p>
+
+<h4 id="request">Request</h4>
+<hr />
+
+<p><br /></p>
+
+<p><strong>Controller와 HTTP Request 메시지</strong></p>
+
+<table>
+    <thead>
+        <tr>
+            <th colspan="3">Controller</th>
+            <th rowspan="2">HTTP Sample Request</th>
+        </tr>
+        <tr>
+            <th>Annotation</th>
+            <th>생략가능</th>
+            <th>Sample Code</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@PathVariable</td>
+            <td>X</td>
+            <td>/{id}</td>
+            <td>GET /a/b/c</td>
+        </tr>
+        <tr>
+            <td rowspan="2">@RequestParam</td>
+            <td>O</td>
+            <td>@GetMapping(.../param)</td>
+            <td>GET /param?id=a</td>
+        </tr>
+        <tr>
+            <td>O</td>
+            <td>@PostMapping(.../param</td>
+            <td>POST /form/param
+            Header
+            Content type:application/x-www-form-urlencoded
+            Body
+            id=a</td>
+        </tr>
+        <tr>
+            <td>@ModelAttribute</td>
+            <td>O</td>
+            <td>@PostMapping("/form/model")
+            @ModelAttribute Star star
+            (이걸로 선언한 객체에는 @Setter 선언이 필요)</td>
+            <td>POST /form/model
+            Header
+            Content type:application/x-www-form-urlencoded
+            Body
+            id=a</td>
+        </tr>
+        <tr>
+            <td>@RequestBody</td>
+            <td>X</td>
+            <td>@RequestBody Star star</td>
+            <td>POST /form/json
+            Header
+            Content type: application/json
+            Body
+            {"id":"a"}</td>
+        </tr>
+    </tbody>
+</table>
+
+<hr />
+
+:ET

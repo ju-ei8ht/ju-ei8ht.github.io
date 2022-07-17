@@ -1,0 +1,88 @@
+I"<h3 id="orm">ORM</h3>
+<hr />
+<blockquote>
+  <p>ORM: Object-Relation Mapping</p>
+
+  <p>Object: <strong>객체</strong>지향 언어(자바, 파이썬) <br />
+Relational: <strong>관계형</strong> 데이터베이스(H2,MySQL)</p>
+</blockquote>
+
+<p>객체와 관계형 데이터베이스의 데이터를 자동으로 연결(mapping)해주는 것</p>
+
+<p><br /><br /></p>
+
+<h4 id="orm이-없으면-웹서버-개발은-못-하나">ORM이 없으면 웹서버 개발은 못 하나?</h4>
+<hr />
+<p>ORM이 없어도 웹서버 개발 가능은 하지만…</p>
+<ul>
+  <li>ORM이 없는 환경에서는 백엔드 개발자가 비즈니스 로직 개발보다 SQL 작성에 더 많은 시간을 할애하게 됨.</li>
+  <li>SQL 작성이 단순하고 반복적인데 실수하기는 쉬움</li>
+  <li>그리고 웹 서버 개발 언어와 관계형 데이터베이스 언어의 목적 및 사용방법이 다름</li>
+</ul>
+
+<p><br /><br /></p>
+
+<h4 id="백엔드-개발자는-db에-대해-몰라도-되나">백엔드 개발자는 DB에 대해 몰라도 되나?</h4>
+<hr />
+<p>그렇지 않다ㅠㅠ <br />
+DB 테이블 설계라든가 SQL Query 성능 확보 등을 위해서도 알아야 함</p>
+
+<hr />
+
+<p><br /><br /></p>
+
+<h3 id="sql">SQL</h3>
+<hr />
+<p>SQL은 관계형 데이터베이스 관리 시스템의 데이터를 관리하기 위해 설계된 특수 목적의 프로그래밍 언어다. <br />
+관계형 데이터베이스 관리 시스템에서 자료의 검색과 관리, 데이터베이스 스키마 생성과 수정, 데이터베이스 객체 접근 조정 관리를 위해 고안되었다. (출처 위키백과)</p>
+
+<p>대표적인 데이터베이스 관리 시스템은 MySql이 있는데… query 매번 까먹어서 정리된 사이트 열어두고 참고하며 했던 기억이…ㅎㅎ <br />
+근데 확실히 스프링에서 JPA로 처리가 가능하니까 일일이 insert into 안 써도 되고 좋긴 하다ㅋㅋ 아직은 모르는 게 많아서 애증의 존재지만.</p>
+
+<hr />
+
+<p><br /><br /></p>
+
+<h3 id="스프링-mvc">스프링 MVC</h3>
+<hr />
+<blockquote>
+  <p>스프링 MVC란 <br />
+Model- View - Controller 디자인 패턴</p>
+</blockquote>
+
+<p>예를들어, server에서 html을 내려주는 경우</p>
+<ol>
+  <li>정적(static) 웹 페이지
+    <ul>
+      <li>Controller</li>
+    </ul>
+    <ul>
+      <li>Client의 요청을 Model로 받아 처리
+        <ul>
+          <li>예) 회원가입을 위한 개인정보들(id, password, name)</li>
+        </ul>
+      </li>
+      <li>Client에게 View(정적 웹페이지, html)를 내려줌</li>
+    </ul>
+  </li>
+  <li>동적(dynamic) 웹 페이지
+    <ul>
+      <li>Controller</li>
+    </ul>
+    <ul>
+      <li>Client의 요청을 Model로 받아 처리</li>
+      <li>Tamplate engine에게 View, Model 전달
+        <ul>
+          <li>View: 동적 html 파일</li>
+          <li>Model: View에 적용할 정보들</li>
+        </ul>
+      </li>
+      <li>Template engine
+        <ul>
+          <li>View에 Model을 적용 -&gt; 동적 웹페이지 생성</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ol>
+:ET
