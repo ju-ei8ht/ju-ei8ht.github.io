@@ -6,7 +6,7 @@ highlighter:      pygments
 defaults:
 -
   scope:
-    path:         "/pages**"
+    path:         "/page**/"
   values:
     sitemap:      false
 
