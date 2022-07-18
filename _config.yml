@@ -1,5 +1,5 @@
 # Dependencies
-gems:             [jekyll-paginate]
+gems:             [jekyll-paginate, jekyll-sitemap]
 markdown:         kramdown
 highlighter:      pygments
 
