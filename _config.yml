@@ -3,13 +3,6 @@ gems:             [jekyll-paginate, jekyll-sitemap]
 markdown:         kramdown
 highlighter:      pygments
 
-defaults:
--
-  scope:
-    path:         "/page**/"
-  values:
-    sitemap:      false
-
 # Permalinks
 permalink:        pretty
 # relative_permalinks: true

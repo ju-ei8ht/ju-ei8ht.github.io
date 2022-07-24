@@ -4,13 +4,46 @@
  <title>Develop</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2022-07-18T09:16:09+09:00</updated>
+ <updated>2022-07-24T21:29:25+09:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>주8</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>CORS</title>
+   <link href="http://localhost:4000/2022/07/24/wil05/"/>
+   <updated>2022-07-24T00:00:00+09:00</updated>
+   <id>http://localhost:4000/2022/07/24/wil05</id>
+   <content type="html">&lt;h3 id=&quot;cors&quot;&gt;CORS&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;p&gt;CORS(Cross-Origin Resource Sharing) 직역하면 교차 출처 리소스 공유인데(심지어 리소스는 그냥 영어잖아) HTTP 헤더를 사용해서 A 출처에서 실행 중인 웹 애플리케이션이 B 출처의 리소스에 접근할 수 있는 권한을 부여하도록 브라우저에 알려주는 체제라고 한다. &lt;br /&gt;
+주로 프론트엔드 서버 - 백엔드 서버간 통신을 해야할 때 보안상의 이유로 설정해줘야 한다. 허락 받은 프론트엔드만 백엔드 서버의 응답을 받을 수 있다는 것.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;이를-위한-spring-설정은&quot;&gt;이를 위한 Spring 설정은&lt;/h4&gt;
+&lt;hr /&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;@Configuration
+public class WebMvcConfig implements WebMvcConfigurer {	
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+    	registry.addMapping(&quot;/**&quot;)
+                .allowedOrigins(&quot;http://xx.xxx.xxx.xx:port&quot;); //프론트엔드 서버
+
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;이렇게 설정을 해주고 만약 스프링 시큐리티를 사용한다면 WebSecurityConfigurerAdapter를 상속하는 클래스에 http.cors() 메소드를 사용해주고 위에서 만든 addCorsMappings를 override해주면 되겠다.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;출처 : &lt;a href=&quot;https://emgc.tistory.com/131&quot;&gt;[Spring] 스프링의 CORS설정&lt;/a&gt;, &lt;a href=&quot;https://velog.io/@ojwman/spring-boot-cors-header-preflight&quot;&gt;SpringBoot에서 CORS할 때 header, preflight 이슈 해결하기&lt;/a&gt;, &lt;a href=&quot;https://evan-moon.github.io/2020/05/21/about-cors/&quot;&gt;CORS는 왜 이렇게 우리를 힘들게 하는걸까?&lt;/a&gt;&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>ORM, SQL, MVC</title>

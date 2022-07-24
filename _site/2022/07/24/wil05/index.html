@@ -13,7 +13,7 @@
 
   <title>
     
-      (항해99) 1주차 웹개발 미니 프로젝트 - 코딩(1) &middot; Develop
+      CORS &middot; Develop
     
   </title>
 
@@ -92,14 +92,14 @@
 
     <div class="content container">
       <div class="post" style="display: block;">
-  <h1 class="post-title">(항해99) 1주차 웹개발 미니 프로젝트 - 코딩(1)</h1>
-  <span class="post-date">21 Jun 2022</span>
+  <h1 class="post-title">CORS</h1>
+  <span class="post-date">24 Jul 2022</span>
   
     <div class="tags">
     
       
-        <a href="/posts?tag=blog">
-          <span class="tag">Blog</span>
+        <a href="/posts?tag=java">
+          <span class="tag">Java</span>
         </a>
       
     
@@ -110,46 +110,43 @@
       
     
       
-        <a href="/posts?tag=project">
-          <span class="tag">Project</span>
+        <a href="/posts?tag=wil">
+          <span class="tag">WIL</span>
         </a>
       
     
     </div>
   
-  <h3 id="역할분담">역할분담</h3>
+  <h3 id="cors">CORS</h3>
 <hr />
-<p>원대 (혼자 생각만 한)계획대로라면 웹퍼블리셔로 일했던 경험을 살려(ㅋㅋ) 간단하게 html마크업을 하고 파일을 뿌릴 생각이었으나 이미 팀원들이 작업을 시작하고 있어서(ㅋㅋ) 그냥 남은 걸 줏어서 코딩을 시작헀다…</p>
+<p>CORS(Cross-Origin Resource Sharing) 직역하면 교차 출처 리소스 공유인데(심지어 리소스는 그냥 영어잖아) HTTP 헤더를 사용해서 A 출처에서 실행 중인 웹 애플리케이션이 B 출처의 리소스에 접근할 수 있는 권한을 부여하도록 브라우저에 알려주는 체제라고 한다. <br />
+주로 프론트엔드 서버 - 백엔드 서버간 통신을 해야할 때 보안상의 이유로 설정해줘야 한다. 허락 받은 프론트엔드만 백엔드 서버의 응답을 받을 수 있다는 것.</p>
 
-<p><br /></p>
+<p><br /><br /></p>
 
-<h3 id="코딩">코딩</h3>
+<h4 id="이를-위한-spring-설정은">이를 위한 Spring 설정은</h4>
 <hr />
-<p><strong>1일차</strong> <br />
-나는 메인페이지를 맡았는데 디자인적 요소도 넣으면 좋겠다 싶어서 메인 상단에 유튜브에서 만든 유튜브쇼츠 홍보영상을 자동재생에 루프되게 하고 배경이미지처럼 깔았다. <br />
-gnb는 그 아래에 두고 스크롤을 내리면 fixed되게 했다. 뭐 늘 했던 그거라서 무감흥으로 작업했는데 팀원분들 반응이 괜찮아서 흡족했던 기억(ㅋㅋ)</p>
 
-<p>기존에 사용했던 ajax로 get 받아서 append하기가 아니라 jinja2를 사용하라는 조건이 있어서 jinja2 사용하는 걸 찾아보느라 시간이 좀 걸렸다. 그래도 그 외적인 건 다 끝내둔 상태였기 떄문에 여유롭게 작업했다.</p>
+<pre><code class="language-java">@Configuration
+public class WebMvcConfig implements WebMvcConfigurer {	
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+    	registry.addMapping("/**")
+                .allowedOrigins("http://xx.xxx.xxx.xx:port"); //프론트엔드 서버
 
-<p>jinja2로 작업하라는 조건이 있었을 땐 헉 그건 또 뭐야 하고 쫄았는데(ㅋㅋ) 해보니까 오히려 파이썬으로 변수만 뿌려주면 html에서 받아서 출력해야 하는 부분에 넣기만 하면 되는 거라 쉬웠다. <br />
-그래서 작업 자체는 빨리 끝났는데 확인하는 과정에서 포스팅 페이지에서 reload로 index페이지에 왔을 때 db list가 바로 반영이 안 되는 문제가 생겼다! <br />
-원인 파악을 못해 어리둥절하고 있었는데 알고보니 값을 ajax로 html에서 뿌려주는 게 아니다보니 app.py에서 posting페이지에도 변수값을 줘야 했던 문제였다.</p>
+    }
+}
+</code></pre>
+<p>이렇게 설정을 해주고 만약 스프링 시큐리티를 사용한다면 WebSecurityConfigurerAdapter를 상속하는 클래스에 http.cors() 메소드를 사용해주고 위에서 만든 addCorsMappings를 override해주면 되겠다.</p>
 
-<p>가슴이 철렁했는데 팀원이 금방 해결해서 무사히 넘어갔다.</p>
+<p><br /><br /></p>
+
+<p>출처 : <a href="https://emgc.tistory.com/131">[Spring] 스프링의 CORS설정</a>, <a href="https://velog.io/@ojwman/spring-boot-cors-header-preflight">SpringBoot에서 CORS할 때 header, preflight 이슈 해결하기</a>, <a href="https://evan-moon.github.io/2020/05/21/about-cors/">CORS는 왜 이렇게 우리를 힘들게 하는걸까?</a></p>
 
 </div>
 <div class="related">
   <h2>Related Posts</h2>
   <ul class="related-posts">
-    
-      <li>
-        <h3>
-          <a href="/2022/07/24/wil05/">
-            CORS
-            <small>24 Jul 2022</small>
-          </a>
-        </h3>
-      </li>
     
       <li>
         <h3>
@@ -165,6 +162,15 @@ gnb는 그 아래에 두고 스크롤을 내리면 fixed되게 했다. 뭐 늘 �
           <a href="/2022/07/17/sparta01/">
             (항해99) 3주차 주특기 숙련
             <small>17 Jul 2022</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2022/07/10/wil03/">
+            DI, IoC, Bean
+            <small>10 Jul 2022</small>
           </a>
         </h3>
       </li>
